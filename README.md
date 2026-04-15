@@ -1,93 +1,84 @@
-<h1 align="center">
-  <br>
-  <a href="https://github.com/siddharthsky/AI-Video-Summarizer"><img src="https://i.imgur.com/Jk1wxO3.png" alt="AI YouTube Video Summarizer" width="200"></a>
-  <br>
-   🎥 AI Video Summarization & Timestamp Generator
-  <br>
-</h1>
+# AI Video Summarizer
 
-<h4 align="center">Harnessing the Power of LLMs for Enhanced Video Understanding</h4>
+![AI Video Summarizer](https://i.imgur.com/Jk1wxO3.png)
 
-<p align="center">
-  <a href="https://github.com/siddharthsky/AI-Video-Summarizer/issues"><img src="https://img.shields.io/github/issues/siddharthsky/google-gemini-yt-video-summarizer-AI-p"></a> 
-  <a href="https://github.com/siddharthsky/AI-Video-Summarizer/stargazers"><img src="https://img.shields.io/github/stars/siddharthsky/google-gemini-yt-video-summarizer-AI-p"></a>
-  <a href="https://github.com/siddharthsky/AI-Video-Summarizer/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg">
-  </a>
-</p>
+An interactive Streamlit app that summarizes YouTube videos, generates timestamp-based highlights, and downloads transcripts using AI.
 
-<p align="center">
-  <a href="#overview-">Overview</a> •
-  <a href="#features-">Features</a> •
-  <a href="#getting-started-">Getting Started</a> •
-  <a href="#contributing">Contributing</a> 
-</p>
+## Overview
 
-<p align="center">
-  <a href="https://github.com/siddharthsky/AI-Video-Summarizer"><img src="https://github.com/siddharthsky/AI-Video-Summarizer/blob/main/research/demo3.gif" alt="Usage Demo"></a>
-</p>
+This project extracts YouTube captions or falls back to local Whisper transcription, then uses Google Gemini or OpenAI ChatGPT to:
 
+- generate concise video summaries
+- create timestamped highlights
+- provide downloadable transcript and summary files
 
+## Features
 
+- YouTube URL input with caption retrieval via `youtube_transcript_api`
+- Local Whisper fallback when transcripts are unavailable
+- Support for Google Gemini and OpenAI ChatGPT models
+- Clipboard copy and text download for summaries and transcripts
+- Streamlit-based web interface with user-friendly model selection
 
-## Overview 📝
+## Prerequisites
 
-This project is an AI-powered video summarizer designed specifically for YouTube videos. Leveraging the Google Gemini API, it employs advanced machine learning techniques to analyze and condense lengthy YouTube videos into concise summaries, providing users with quick insights into the video content.
+- Python 3.10 or newer
+- `pip` installed
+- API credentials for one or both models:
+  - `GOOGLE_GEMINI_API_KEY`
+  - `OPENAI_CHATGPT_API_KEY`
 
+## Installation
 
-## Features ✨
-
-- Automatic extraction of key insights and timestamps from YouTube videos.
-- Utilizes youtube-transcript-api for getting the transcripts/subtitles YouTube video.
-- Option for users to select AI models like *ChatGPT* or *Gemini* for summarization.
-- Efficiently summarizes videos, reducing viewing time while preserving essential information.
-
-## Getting Started 🚀
-
-### Prerequisites
-
-- Python 3.10
-- LLM Model API Keys [[🔑]](https://github.com/siddharthsky/AI-Video-Summarizer/tree/main?tab=readme-ov-file#get-api-keys)
-
-### Usage
-
-1. Clone the repository:
-```
+```bash
 git clone https://github.com/siddharthsky/AI-Video-Summarizer.git
-```
-2. Navigate to the project directory:
-```
 cd AI-Video-Summarizer
-```
-3. Install dependencies:
-```
 pip install -r requirements.txt
 ```
-4. Create a ".env" file ⬇️ [add whichever is available]
-```
-GOOGLE_GEMINI_API_KEY = "Your-Gemini-Key-Here"
-OPENAI_CHATGPT_API_KEY = "Your-Openai-Key-Here"
+
+## Configuration
+
+Create a `.env` file in the project root with one or both of the following keys:
+
+```env
+GOOGLE_GEMINI_API_KEY="your-gemini-api-key"
+OPENAI_CHATGPT_API_KEY="your-openai-api-key"
 ```
 
-### Get API Keys:
+## Run the App
 
-- [Google Gemini API key](https://makersuite.google.com/app/apikey) 🔑 
-   
-- [OpenAI ChatGPT API key](https://platform.openai.com/signup) 🔑 
-   
-
-5 Run the summarizer:
-```
+```bash
 streamlit run app.py
 ```
 
+Then open the provided local URL in your browser.
+
+## Usage
+
+1. Enter a valid YouTube video link.
+2. Choose a model from the available options.
+3. Select one of:
+   - `AI Summary`
+   - `AI Timestamps`
+   - `Transcript`
+4. Click the appropriate button to generate output.
+
+## Project Structure
+
+- `app.py` — Streamlit application entrypoint
+- `whisper_transcriber.py` — local Whisper transcription fallback
+- `src/` — helper modules for video info, prompts, timestamp formatting, and model calls
+- `requirements.txt` — Python dependencies
+
+## Notes
+
+- If YouTube captions are unavailable, the app will attempt local transcription using Whisper.
+- The app currently supports Gemini models `gemini-2.5-flash` and `gemini-2.0-flash-lite`.
 
 ## Contributing
 
-Contributions are welcome from the community!, Whether it's feedback, suggestions, or code improvements, your input is valuable. 
+Contributions, bug reports, and feature suggestions are welcome. Feel free to open an issue or submit a pull request.
 
-## Acknowledgments
+## License
 
-- [Google Gemini](https://ai.google.dev/)
-- [OpenAI ChatGPT](https://help.openai.com/en/) 
-- [Krish Naik](https://www.youtube.com/user/krishnaik06) 
+This project is licensed under the MIT License.
