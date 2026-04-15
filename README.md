@@ -31,7 +31,7 @@ This project extracts YouTube captions or falls back to local Whisper transcript
 ## Installation
 
 ```bash
-git clone https://github.com/siddharthsky/AI-Video-Summarizer.git
+git clone https://github.com/24A31A05EH/AI-Video-Summarizer.git
 cd AI-Video-Summarizer
 pip install -r requirements.txt
 ```
