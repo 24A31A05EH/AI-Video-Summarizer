@@ -1,29 +1,5 @@
 # import streamlit as st
-# import os
-# from dotenv import load_dotenv
-# from src.video_info import GetVideo
-# from src.model import Model
-# from src.prompt import Prompt
-# from src.misc import Misc
-# from src.timestamp_formatter import TimestampFormatter
-# from src.copy_module_edit import ModuleEditor
-# from st_copy_to_clipboard import st_copy_to_clipboard
-# from whisper_transcriber import transcribe_with_whisper
 
-# class AIVideoSummarizer:
-#     def __init__(self):
-#         self.youtube_url = None
-#         self.video_id = None
-#         self.video_title = None
-#         self.video_transcript = None
-#         self.video_transcript_time = None
-#         self.summary = None
-#         self.time_stamps = None
-#         self.transcript = None
-#         self.model_name = None
-#         self.gemini_model_type = "gemini-2.5-flash"
-#         self.col1 = None
-#         self.col2 = None
 #         self.col3 = None
 #         self.model_env_checker = []
 #         load_dotenv()
